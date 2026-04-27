@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Fredoka', system-ui, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  user-select: none;
+  overscroll-behavior: none;
+}
+
+canvas {
+  display: block;
+  outline: none;
+}
+
+@layer components {
+  .panel {
+    @apply rounded-2xl bg-slate-900/80 backdrop-blur-md border-2 border-white/10 shadow-2xl;
+  }
+  .btn {
+    @apply px-5 py-2.5 rounded-xl font-semibold tracking-wide transition-all duration-150 active:scale-95 select-none;
+  }
+  .btn-primary {
+    @apply btn bg-gradient-to-b from-amber-300 to-amber-500 text-slate-900 shadow-md shadow-amber-700/40 hover:from-amber-200 hover:to-amber-400 hover:shadow-lg hover:-translate-y-0.5;
+  }
+  .btn-secondary {
+    @apply btn bg-gradient-to-b from-sky-400 to-sky-600 text-white shadow-md shadow-sky-900/40 hover:from-sky-300 hover:to-sky-500 hover:-translate-y-0.5;
+  }
+  .btn-ghost {
+    @apply btn bg-white/5 hover:bg-white/15 border border-white/10 text-white;
+  }
+  .btn-danger {
+    @apply btn bg-gradient-to-b from-rose-400 to-rose-600 text-white shadow-md hover:from-rose-300 hover:to-rose-500 hover:-translate-y-0.5;
+  }
+  .stat-bar {
+    @apply h-2 rounded-full bg-slate-800/60 overflow-hidden;
+  }
+}
+
+.dialogue-text {
+  text-shadow: 1px 1px 0 #000, -1px 1px 0 #000, 1px -1px 0 #000, -1px -1px 0 #000;
+}
+
+.menu-bg {
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 200, 100, 0.25), transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(100, 180, 255, 0.25), transparent 45%),
+    linear-gradient(135deg, #0b1220 0%, #1a2440 50%, #2d1a4d 100%);
+}
+
+.title-glow {
+  text-shadow:
+    0 0 12px rgba(255, 220, 100, 0.6),
+    0 0 24px rgba(255, 180, 60, 0.4),
+    2px 2px 0 #000;
+}
+
+.hp-bar-fill {
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fade-overlay {
+  position: fixed;
+  inset: 0;
+  background: black;
+  pointer-events: none;
+  z-index: 60;
+  transition: opacity 0.5s ease;
+}
